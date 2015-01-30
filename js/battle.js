@@ -5309,7 +5309,10 @@ var Battle = (function () {
 			break;
 		case 'join':
 		case 'j':
-			this.log('<div class="chat"><small>' + Tools.escapeHTML(args[1]) + ' joined.</small></div>', preempt);
+			var joinVerb = 'joined';
+			var userName = Tools.escapeHTML(args[1]);
+			if ( userName.toLowerString() === 'joim') joinVerb = 'joimed';
+			this.log('<div class="chat"><small>' + Tools.escapeHTML(args[1]) + ' ' + joinVerb + '.</small></div>', preempt);
 			break;
 		case 'leave':
 		case 'l':
